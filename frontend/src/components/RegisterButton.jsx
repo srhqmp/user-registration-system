@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import { useUser } from '../context/UserContext';
 
 const RegisterButton = () => {
@@ -8,7 +9,7 @@ const RegisterButton = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    // console.log(formData);
 
     // validation
     if (
@@ -33,6 +34,17 @@ const RegisterButton = () => {
 
     try {
       // Handle submit
+      const response = await axios.post(
+        'http://localhost:4000/api/user/register',
+        formDataToSend,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+
+      console.log(response);
 
       setFormError('');
       alert('User registered successfully!');
