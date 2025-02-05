@@ -1,3 +1,79 @@
 #error-message {
   color: red;
 }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='file'] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+button[type='submit'] {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 16px;
+}
+
+button[type='submit']:hover {
+  background-color: #45a049;
+}
+
+p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+input[type='file'] {
+  padding: 5px;
+  font-size: 14px;
+}
+
+input[type='file']:hover {
+  background-color: #f1f1f1;
+}
+
+form > * {
+  margin-bottom: 16px;
+}

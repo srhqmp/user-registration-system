@@ -5,7 +5,10 @@ const InputField = ({ label, type, field, required = false }) => {
 
   return (
     <div>
-      <label>{label}:</label>
+      <label>
+        {label}
+        {required && '*'}
+      </label>
       <input
         type={type}
         value={formData[field]}

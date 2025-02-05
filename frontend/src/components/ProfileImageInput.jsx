@@ -1,7 +1,7 @@
 import { useUser } from '../context/UserContext';
 
 const ProfileImageInput = () => {
-  const {  updateFormData } = useUser();
+  const { updateFormData } = useUser();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -10,12 +10,8 @@ const ProfileImageInput = () => {
 
   return (
     <div>
-      <label>Profile Image:</label>
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleImageChange}
-      />
+      <label>Profile Image*</label>
+      <input type="file" accept="image/*" onChange={handleImageChange} />
     </div>
   );
 };
