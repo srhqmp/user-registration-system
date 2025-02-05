@@ -4,8 +4,6 @@ const registerUser = async (req, res) => {
   try {
     const { firstName, lastName, middleName, email, phoneNumber } = req.body;
 
-    console.log('FILE:', req.file);
-
     if (!req.file) {
       return res.status(400).json({ error: 'Profile image is required' });
     }
@@ -16,10 +14,7 @@ const registerUser = async (req, res) => {
       middleName,
       email,
       phoneNumber,
-      profileImage: {
-        data: req.file.buffer,
-        contentType: req.file.mimetype,
-      },
+      profileImage: req.file.path,
     });
 
     await newUser.save();

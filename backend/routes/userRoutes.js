@@ -1,10 +1,7 @@
-const multer = require('multer');
 const express = require('express');
-const { registerUser } = require('../controllers/userController');
-
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
 const router = express.Router();
+const upload = require('../utils/multer');
+const { registerUser } = require('../controllers/userController');
 
 router.post('/register', upload.single('profileImage'), registerUser);
 
