@@ -9,17 +9,18 @@ const RegisterButton = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // console.log(formData);
-
     // validation
     if (
       !formData.firstName ||
       !formData.lastName ||
       !formData.email ||
-      !formData.phoneNumber ||
-      !formData.profileImage
+      !formData.phoneNumber
     ) {
       setFormError('Please fill out all required fields.');
+      return;
+    }
+    if (!formData.profileImage) {
+      setFormError('Profile Image is required.');
       return;
     }
 
@@ -35,7 +36,7 @@ const RegisterButton = () => {
     try {
       // Handle submit
       const response = await axios.post(
-        'http://localhost:4000/api/user/register',
+        'http://localhost:5000/api/user/register',
         formDataToSend,
         {
           headers: {
@@ -45,7 +46,6 @@ const RegisterButton = () => {
       );
 
       console.log(response);
-
       setFormError('');
       alert('User registered successfully!');
     } catch (error) {
@@ -56,7 +56,7 @@ const RegisterButton = () => {
 
   return (
     <div>
-      {formError && <p style={{ color: 'red' }}>{formError}</p>}
+      {formError && <p id="error-message">{formError}</p>}
       <button type="submit" onClick={handleSubmit}>
         Register
       </button>
