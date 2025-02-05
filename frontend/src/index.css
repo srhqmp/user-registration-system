@@ -2,6 +2,13 @@
   color: red;
 }
 
+#success-message {
+  color: green;
+  padding: 45px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -76,4 +83,15 @@ input[type='file']:hover {
 
 form > * {
   margin-bottom: 16px;
+}
+
+.submitted-data {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.submitted-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }

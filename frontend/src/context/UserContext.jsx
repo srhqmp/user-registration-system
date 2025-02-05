@@ -15,6 +15,7 @@ export const UserProvider = ({ children }) => {
     phoneNumber: '',
     profileImage: null,
   });
+  const [submittedData, setSubmittedData] = useState(null);
 
   const updateFormData = (field, value) => {
     setFormData((prev) => ({
@@ -23,8 +24,32 @@ export const UserProvider = ({ children }) => {
     }));
   };
 
+  const updateSubmittedData = (data) => {
+    setSubmittedData(data);
+  };
+
+  const resetData = () => {
+    setFormData({
+      firstName: '',
+      lastName: '',
+      middleName: '',
+      email: '',
+      phoneNumber: '',
+      profileImage: null,
+    });
+    setSubmittedData(null);
+  };
+
   return (
-    <UserContext.Provider value={{ formData, updateFormData }}>
+    <UserContext.Provider
+      value={{
+        formData,
+        submittedData,
+        resetData,
+        updateFormData,
+        updateSubmittedData,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

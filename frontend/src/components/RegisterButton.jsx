@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useUser } from '../context/UserContext';
 
 const RegisterButton = () => {
-  const { formData } = useUser();
+  const { formData, updateSubmittedData } = useUser();
   const [formError, setFormError] = useState('');
 
   const handleSubmit = async (e) => {
@@ -46,8 +46,8 @@ const RegisterButton = () => {
       );
 
       console.log(response);
+      updateSubmittedData(response.data.user);
       setFormError('');
-      alert('User registered successfully!');
     } catch (error) {
       setFormError('Error registering user.');
       console.error(error);
