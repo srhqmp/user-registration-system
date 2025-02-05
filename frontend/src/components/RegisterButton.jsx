@@ -45,7 +45,6 @@ const RegisterButton = () => {
         }
       );
 
-      console.log(response);
       updateSubmittedData(response.data.user);
       setFormError('');
     } catch (error) {

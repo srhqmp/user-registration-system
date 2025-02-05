@@ -13,7 +13,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-form {
+.container {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -47,7 +47,7 @@ label {
   display: inline-block;
 }
 
-button[type='submit'] {
+button {
   background-color: #4caf50;
   color: white;
   padding: 15px 32px;
@@ -62,7 +62,7 @@ button[type='submit'] {
   margin-top: 16px;
 }
 
-button[type='submit']:hover {
+button:hover {
   background-color: #45a049;
 }
 
@@ -86,12 +86,16 @@ form > * {
 }
 
 .submitted-data {
-  margin: 0 auto;
-  max-width: 500px;
+  padding-bottom: 25px;
 }
 
 .submitted-info {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+.submitted-info span {
+  margin-left: 16px;
+  font-weight: 600;
 }
